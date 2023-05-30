@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: animal.icons
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e9fe08b0576beb241b699fd2c140a505, type: 3}
+    - {fileID: 2800000, guid: 4afa69a8ed54dd541956f26a2b2ac44a, type: 3}
+    - {fileID: 2800000, guid: efeaadba912bc9e4fb435d84fea5ff07, type: 3}
+    - {fileID: 2800000, guid: 78e00c706811641478201cfaed3c4605, type: 3}
+    - {fileID: 2800000, guid: a304b802217a4b542bda163f7a0cc476, type: 3}
+    - {fileID: 2800000, guid: 34ca90e25c1b0ea4d930bb5f2308b530, type: 3}
+    - {fileID: 2800000, guid: e54c1a96d47505c40ae6dd633a267385, type: 3}
+    - {fileID: 2800000, guid: 0907f744c4a8138429051998ec3a3d4e, type: 3}
+    - {fileID: 2800000, guid: 951f5f87c22baf2478258a9799bed8c5, type: 3}
+    - {fileID: 2800000, guid: 3ae55060ba1298d44a7bd03e1885484e, type: 3}
+    - {fileID: 2800000, guid: b231a23941a02044faeb8fcd78626733, type: 3}
+    - {fileID: 2800000, guid: 9016bc1b947f4af468cf12686411382d, type: 3}
+    - {fileID: 2800000, guid: 2c0de04aaca1f874cb0c03eb51060a20, type: 3}
+    - {fileID: 2800000, guid: f23936132c44dd54f82218e2d1ecb38a, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3ae55060ba1298d44a7bd03e1885484e, type: 3}
+  - {fileID: 21300000, guid: 78e00c706811641478201cfaed3c4605, type: 3}
+  - {fileID: 21300000, guid: e9fe08b0576beb241b699fd2c140a505, type: 3}
+  - {fileID: 21300000, guid: a304b802217a4b542bda163f7a0cc476, type: 3}
+  - {fileID: 21300000, guid: 34ca90e25c1b0ea4d930bb5f2308b530, type: 3}
+  - {fileID: 21300000, guid: f23936132c44dd54f82218e2d1ecb38a, type: 3}
+  - {fileID: 21300000, guid: 0907f744c4a8138429051998ec3a3d4e, type: 3}
+  - {fileID: 21300000, guid: e54c1a96d47505c40ae6dd633a267385, type: 3}
+  - {fileID: 21300000, guid: 951f5f87c22baf2478258a9799bed8c5, type: 3}
+  - {fileID: 21300000, guid: 4afa69a8ed54dd541956f26a2b2ac44a, type: 3}
+  - {fileID: 21300000, guid: b231a23941a02044faeb8fcd78626733, type: 3}
+  - {fileID: 21300000, guid: 2c0de04aaca1f874cb0c03eb51060a20, type: 3}
+  - {fileID: 21300000, guid: efeaadba912bc9e4fb435d84fea5ff07, type: 3}
+  - {fileID: 21300000, guid: 9016bc1b947f4af468cf12686411382d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Rooster
+  - Flamingo
+  - Crocodile
+  - Gorilla
+  - Koala
+  - Zebra
+  - Peacock
+  - Panda
+  - Pig
+  - Dog
+  - Snake
+  - Tortoise
+  - Elephant
+  - Tiger
+  m_RenderDataMap: {}
+  m_Tag: animal.icons
+  m_IsVariant: 0

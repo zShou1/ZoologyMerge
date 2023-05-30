@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tortoise
+  m_Controller: {fileID: 9100000, guid: 900d6feb3fcec6646b35f2bdab0e4b6e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 17de1d499745a67499ebcc97c92232e6, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: f914e8de3355fd541936638885f730b2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9bce162fe8867134e9e4f32c5a0001c4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d877a8ee627bfd9428a2489620e4a7f9, type: 2}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 877562c1c75686c4f82d78619cf32d87, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: f914e8de3355fd541936638885f730b2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6b702e25beac09b4294ab65c02d2389f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 550e3ddc9160a7847aa08d32ae33d354, type: 2}
