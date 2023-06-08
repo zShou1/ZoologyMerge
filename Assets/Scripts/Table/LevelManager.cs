@@ -31,8 +31,9 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         isWin = false;
-        levelTable = _listLevel[GameManager.Instance.CurrentLevel-1];
+        /*levelTable = _listLevel[GameManager.Instance.CurrentLevel-1];*/
         for (int i = 0; i < levelTable.waveList.Count; i++)
         {
             levelTable.waveList[i].TotalEnemy = 0;
@@ -70,6 +71,12 @@ public class LevelManager : MonoBehaviour
                 lane.EnemyOnLaneQueue.Clear();
             }
             yield return new WaitForSeconds(timeDelayWave);
+            /*if (i == levelTable.waveList.Count-1)
+            {
+             yield return new WaitForSeconds(1.5f);
+             Time.timeScale = 0;
+             nextLevelPanel.SetActive(true);
+            }*/
         }
     }
 
@@ -131,10 +138,10 @@ public class LevelManager : MonoBehaviour
             }
             
             // Add enemy to the lane's queue
-/*            if (lane.EnemyOnLaneQueue == null)
+            if (lane.EnemyOnLaneQueue == null)
             {
                 lane.EnemyOnLaneQueue = new Queue<Enemy>();
-            }*/
+            }
             lane.EnemyOnLaneQueue.Enqueue(enemy);
         }
 

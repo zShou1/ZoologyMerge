@@ -7,7 +7,7 @@ public class NextPanelUI : MonoBehaviour
 {
     public void NextLevelAndReloadScene()
     {
-        if (GameManager.Instance.CurrentLevel > 10)
+        if (GameManager.Instance.CurrentLevel > 3)
         {
             PlayerPrefs.DeleteAll();
         }

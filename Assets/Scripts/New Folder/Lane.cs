@@ -65,7 +65,7 @@ public class Lane : MonoBehaviour
                     /*Chuyen sang dung State*/
                     /*StartCoroutine(currentAnimalOnLane.MoveToEnemy(firstEnemyInQueue.transform));*/
                     currentAnimalOnLane.currentEnemyAttackTransform = firstEnemyInQueue.transform;
-                    if (currentAnimalOnLane.currentState != AnimalState.MoveToPlayer)
+                    if (currentAnimalOnLane.currentState == AnimalState.Freeze)
                     {
                         currentAnimalOnLane.SetState(AnimalState.MoveToPlayer);
                     }
@@ -78,13 +78,14 @@ public class Lane : MonoBehaviour
                         {
                             currentAnimalOnLane.SetState(AnimalState.Attack);
                         }
+                        if (currentAnimalOnLane.isInitMoveToPlayer && currentAnimalOnLane.isAttacked)
+                        {
+                            firstEnemyInQueue.OnDeActive();
+                            Destroy(firstEnemyInQueue.transform.gameObject);
+                            EnemyOnLaneQueue.Dequeue();
+                        }
                     }
-                    if (currentAnimalOnLane.isInitMoveToPlayer && currentAnimalOnLane.isAttacked)
-                    {
-                        firstEnemyInQueue.OnDeActive();
-                        Destroy(firstEnemyInQueue.transform.gameObject);
-                        EnemyOnLaneQueue.Dequeue();
-                    }
+                    
                 }
                 else if (currentAnimalOnLane.animalLevel == firstEnemyInQueue.EnemyLevel)
                 {
@@ -97,18 +98,19 @@ public class Lane : MonoBehaviour
                         {
                             currentAnimalOnLane.SetState(AnimalState.Attack);
                         }
+                        if (currentAnimalOnLane.isAttacked)
+                        {
+                            firstEnemyInQueue.OnDeActive();
+                            Destroy(firstEnemyInQueue.transform.gameObject);
+                            EnemyOnLaneQueue.Dequeue();
+                            Destroy(currentAnimalOnLane.gameObject);
+                            currentAnimalOnLane = null;
+                            animalOnLane = null;
+                        }
                     }
 
                     /*StartCoroutine(currentAnimalOnLane.AttackEnemySameLevel(firstEnemyInQueue.transform));*/
-                    if (currentAnimalOnLane.isAttacked)
-                    {
-                        firstEnemyInQueue.OnDeActive();
-                        Destroy(firstEnemyInQueue.transform.gameObject);
-                        EnemyOnLaneQueue.Dequeue();
-                        Destroy(currentAnimalOnLane.gameObject);
-                        currentAnimalOnLane = null;
-                        animalOnLane = null;
-                    }
+                    
                 }
                 else if (currentAnimalOnLane.animalLevel < firstEnemyInQueue.EnemyLevel)
                 {
@@ -117,20 +119,25 @@ public class Lane : MonoBehaviour
                     {
                         /*currentAnimalOnLane.Attack();*/
                         currentAnimalOnLane.currentState = AnimalState.Attack;
+                        
+                        if (currentAnimalOnLane.isAttacked)
+                        {
+                            /*Destroy(firstEnemyInQueue.transform.gameObject);
+                            EnemyOnLaneQueue.Dequeue();*/
+                            Destroy(currentAnimalOnLane.gameObject);
+                            currentAnimalOnLane = null;
+                            animalOnLane = null;
+                        }
                     }
 
                     /*StartCoroutine(currentAnimalOnLane.AttackEnemySameLevel(firstEnemyInQueue.transform));*/
-                    if (currentAnimalOnLane.isAttacked)
-                    {
-                        /*Destroy(firstEnemyInQueue.transform.gameObject);
-                        EnemyOnLaneQueue.Dequeue();*/
-                        Destroy(currentAnimalOnLane.gameObject);
-                        currentAnimalOnLane = null;
-                        animalOnLane = null;
-                    }
+                    
                 }
                 yield return new WaitUntil(() => firstEnemyInQueue.isDestroyOrThrough);
-                currentAnimalOnLane.isAttacked = false;
+                if (currentAnimalOnLane)
+                {
+                    currentAnimalOnLane.isAttacked = false;
+                }
             }
         }
 

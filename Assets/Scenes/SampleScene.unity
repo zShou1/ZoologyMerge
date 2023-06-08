@@ -4356,7 +4356,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1691556179}
         m_TargetAssemblyTypeName: NextPanelUI, Assembly-CSharp
-        m_MethodName: ReloadScene
+        m_MethodName: NextLevelAndReloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

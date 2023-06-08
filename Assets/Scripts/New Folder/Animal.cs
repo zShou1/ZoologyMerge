@@ -39,6 +39,7 @@ public class Animal : MonoBehaviour
 
     private void Awake()
     {
+        animator = transform.GetChild(0).GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         zLocalScale = transform.localScale.z;
         currentState = AnimalState.Freeze;
@@ -48,11 +49,11 @@ public class Animal : MonoBehaviour
     {
         isInitMoveToPlayer = false;
         isAttacked = false;
+        /*UpdateState();*/
     }
 
     private void Start()
     {
-        animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
     public void SetState(AnimalState newState)
@@ -95,14 +96,14 @@ public class Animal : MonoBehaviour
 
     public void MoveToAnimalOnLanePosition()
     {
+        rb.isKinematic = false;
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, -zLocalScale);
         rb.velocity = -1 * speed * Time.fixedDeltaTime * Vector3.forward;
         if (transform.position.z <= animalOnLanePosition.z)
         {
-            rb.isKinematic = true;
-            rb.velocity = Vector3.zero;
             transform.position = animalOnLanePosition;
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, zLocalScale);
+            SetState(AnimalState.Freeze);
         }
     }
 
@@ -110,19 +111,28 @@ public class Animal : MonoBehaviour
     {
         /*Debug.Log(isAttacked);
         Debug.Log(currentState);*/
+        UpdateState();
+        /*Debug.Log(gameObject.name+ " "+ rb.velocity.z);*/
+    }
+
+    void UpdateState()
+    {
         animator.SetFloat("Velocity", Math.Abs(rb.velocity.z));
         switch (currentState)
         {
             default:
                 break;
             case AnimalState.Freeze:
+                rb.isKinematic = true;
                 rb.velocity = Vector3.zero;
+                transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, zLocalScale);
                 break;
             case AnimalState.Attack:
                 if (!isAttacked)
                 {
                     Attack();
                 }
+
                 break;
             case AnimalState.MoveToPlayer:
                 /*StartCoroutine(MoveToEnemy(currentEnemyAttackTransform));*/
@@ -141,7 +151,6 @@ public class Animal : MonoBehaviour
         animator.SetTrigger("Attack");
         isAttacked = true;
         isAttacking = false;
-
     }
 
 

@@ -256,13 +256,14 @@ public class Drag : MonoBehaviour
             }
             else if (thisAnimal.animalLevel == lane.currentAnimalOnLane.animalLevel)
             {
+                AnimalState currentAnimalState = lane.currentAnimalOnLane.currentState;
                 beforeSpawnPoint.currentAnimal = null;
                 beforeSpawnPoint.animalSpawnPoint = null;
-                Destroy(lane.animalOnLane);
-                Destroy(gameObject);
+                
                 Animal animalMerge = UIManager.Instance.listAnimals.Find(animal =>
                     animal.animalLevel == (thisAnimal.animalLevel + 1));
-
+                Destroy(lane.animalOnLane);
+                Destroy(gameObject);
                 if (animalMerge.animalLevel > GameManager.Instance.LevelMaxAnimal)
                 {
                     GameManager.Instance.LevelMaxAnimal = animalMerge.animalLevel;
@@ -274,20 +275,26 @@ public class Drag : MonoBehaviour
                 GameObject newAnimal = Instantiate(animalMerge.gameObject, /*animalOnLanePosition*/ lane.animalOnLane.transform.position,
                     Quaternion.identity);
 
+                Animal animal = newAnimal.GetComponent<Animal>();
+                animal.animalOnLanePosition = animalOnLanePosition;
+                animal.SetState(currentAnimalState);
                 /*lane.currentAnimalOnLane = animalMerge;
                 lane.animalOnLane = newAnimal;*/
                 /*spawnPoint.currentAnimal = animalMerge;*/
             }
             else if (thisAnimal.animalLevel > lane.currentAnimalOnLane.animalLevel)
             {
+                thisAnimal.animalOnLanePosition = animalOnLanePosition;
+                transform.position = /*animalOnLanePosition*/ lane.animalOnLane.transform.position;
+                thisAnimal.SetState(lane.currentAnimalOnLane.currentState);
                 Destroy(lane.animalOnLane);
                 lane.currentAnimalOnLane = thisAnimal;
                 lane.animalOnLane = thisAnimal.gameObject;
                 beforeSpawnPoint.currentAnimal = null;
                 beforeSpawnPoint.animalSpawnPoint = null;
-                transform.position = /*animalOnLanePosition*/ lane.animalOnLane.transform.position;
                 isOnLane = true;
-                thisAnimal.animalOnLanePosition = animalOnLanePosition;
+                
+                
             }
             else
             {
