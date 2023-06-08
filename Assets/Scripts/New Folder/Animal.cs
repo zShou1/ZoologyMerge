@@ -101,9 +101,11 @@ public class Animal : MonoBehaviour
         rb.velocity = -1 * speed * Time.fixedDeltaTime * Vector3.forward;
         if (transform.position.z <= animalOnLanePosition.z)
         {
+            currentState = AnimalState.Freeze;
             transform.position = animalOnLanePosition;
+            rb.isKinematic = true;
+            rb.velocity = Vector3.zero;
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, zLocalScale);
-            SetState(AnimalState.Freeze);
         }
     }
 

@@ -462,6 +462,10 @@ MonoBehaviour:
   isInitMoveToPlayer: 0
   zLocalScale: 0
   isAttacked: 0
+  isMoved: 0
+  currentState: 0
+  currentEnemyAttackTransform: {fileID: 0}
+  isAttacking: 0
 --- !u!114 &594988430429576335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +508,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &526891846150444694
 GameObject:
   m_ObjectHideFlags: 0
