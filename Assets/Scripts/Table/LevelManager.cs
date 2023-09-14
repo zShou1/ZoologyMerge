@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         isWin = false;
-        /*levelTable = _listLevel[GameManager.Instance.CurrentLevel-1];*/
+        levelTable = _listLevel[GameManager.Instance.CurrentLevel-1];
         for (int i = 0; i < levelTable.waveList.Count; i++)
         {
             levelTable.waveList[i].TotalEnemy = 0;
@@ -71,12 +71,13 @@ public class LevelManager : MonoBehaviour
                 lane.EnemyOnLaneQueue.Clear();
             }
             yield return new WaitForSeconds(timeDelayWave);
-            /*if (i == levelTable.waveList.Count-1)
+            //Win khi hết quái ở Wave cuối
+            if (i == levelTable.waveList.Count-1)
             {
              yield return new WaitForSeconds(1.5f);
              Time.timeScale = 0;
              nextLevelPanel.SetActive(true);
-            }*/
+            }
         }
     }
 
@@ -92,27 +93,27 @@ public class LevelManager : MonoBehaviour
                 case LaneNum.Lane1:
                     lane = laneList[0];
                     spawnEnemyOnLanePoint = laneList[0].gameObject.transform.position +
-                                            new Vector3(0, 0, laneList[0].laneHeight / 2) + new Vector3(0, 0, 0.4f);
+                                            new Vector3(0, 0, laneList[0].laneHeight / 2)/* + new Vector3(0, 0, 0.4f)*/;
                     break;
                 case LaneNum.Lane2:
                     lane = laneList[1];
                     spawnEnemyOnLanePoint = laneList[1].gameObject.transform.position +
-                                            new Vector3(0, 0, laneList[1].laneHeight / 2) + new Vector3(0, 0, 0.4f);
+                                            new Vector3(0, 0, laneList[1].laneHeight / 2) /*+ new Vector3(0, 0, 0.4f)*/;
                     break;
                 case LaneNum.Lane3:
                     lane = laneList[2];
                     spawnEnemyOnLanePoint = laneList[2].gameObject.transform.position +
-                                            new Vector3(0, 0, laneList[2].laneHeight / 2) + new Vector3(0, 0, 0.4f);
+                                            new Vector3(0, 0, laneList[2].laneHeight / 2) /*+ new Vector3(0, 0, 0.4f)*/;
                     break;
                 case LaneNum.Lane4:
                     lane = laneList[3];
                     spawnEnemyOnLanePoint = laneList[3].gameObject.transform.position +
-                                            new Vector3(0, 0, laneList[3].laneHeight / 2) + new Vector3(0, 0, 0.4f);
+                                            new Vector3(0, 0, laneList[3].laneHeight / 2) /*+ new Vector3(0, 0, 0.4f)*/;
                     break;
                 case LaneNum.Lane5:
                     lane = laneList[4];
                     spawnEnemyOnLanePoint = laneList[4].gameObject.transform.position +
-                                            new Vector3(0, 0, laneList[4].laneHeight / 2) + new Vector3(0, 0, 0.4f);
+                                            new Vector3(0, 0, laneList[4].laneHeight / 2) /*+ new Vector3(0, 0, 0.4f)*/;
                     break;
                 default:
                     isNoLane = true;

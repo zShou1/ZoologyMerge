@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
 
     public bool isDestroyOrThrough = false;
 
+    private Animator _animator;
+
 
     public void InitEnemyLevel(int level)
     {
@@ -32,6 +34,12 @@ public class Enemy : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         enemyLevelText = GetComponentInChildren<TextMeshPro>();
+        _animator = transform.GetChild(1).GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        _animator.SetFloat("Velocity", Math.Abs(rb.velocity.z));
     }
 
     private void StartMove()

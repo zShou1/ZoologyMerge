@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public enum AnimalState
 {
-    MoveToPlayer,
+    MoveToEnemy,
     MoveToLanePosition,
     Attack,
     Freeze,

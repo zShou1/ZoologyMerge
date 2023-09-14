@@ -17,17 +17,29 @@ MonoBehaviour:
     - LaneNum: 0
       enemyLevel: 2
       LaneType: 1
+    - LaneNum: 1
+      enemyLevel: 2
+      LaneType: 1
+    - LaneNum: 2
+      enemyLevel: 2
+      LaneType: 2
+    - LaneNum: 3
+      enemyLevel: 2
+      LaneType: 2
+    randomWayList:
     - LaneNum: 0
       enemyLevel: 2
       LaneType: 1
-    - LaneNum: 0
+    - LaneNum: 2
       enemyLevel: 2
       LaneType: 2
-    - LaneNum: 0
+    - LaneNum: 1
+      enemyLevel: 2
+      LaneType: 1
+    - LaneNum: 3
       enemyLevel: 2
       LaneType: 2
-    randomWayList: []
-    TotalEnemy: 0
+    TotalEnemy: 4
   - wayList:
     - LaneNum: 1
       enemyLevel: 3
@@ -38,8 +50,17 @@ MonoBehaviour:
     - LaneNum: 4
       enemyLevel: 3
       LaneType: 2
-    randomWayList: []
-    TotalEnemy: 0
+    randomWayList:
+    - LaneNum: 1
+      enemyLevel: 3
+      LaneType: 1
+    - LaneNum: 3
+      enemyLevel: 3
+      LaneType: 1
+    - LaneNum: 4
+      enemyLevel: 3
+      LaneType: 2
+    TotalEnemy: 3
   - wayList:
     - LaneNum: 1
       enemyLevel: 4
@@ -47,5 +68,11 @@ MonoBehaviour:
     - LaneNum: 3
       enemyLevel: 4
       LaneType: 1
-    randomWayList: []
-    TotalEnemy: 0
+    randomWayList:
+    - LaneNum: 1
+      enemyLevel: 4
+      LaneType: 1
+    - LaneNum: 3
+      enemyLevel: 4
+      LaneType: 1
+    TotalEnemy: 2

@@ -67,19 +67,21 @@ public class Lane : MonoBehaviour
                     currentAnimalOnLane.currentEnemyAttackTransform = firstEnemyInQueue.transform;
                     if (currentAnimalOnLane.currentState == AnimalState.Freeze)
                     {
-                        currentAnimalOnLane.SetState(AnimalState.MoveToPlayer);
+                        currentAnimalOnLane.SetState(AnimalState.MoveToEnemy);
                     }
                     if (Vector3.Magnitude(firstEnemyInQueue.transform.position -
                                           currentAnimalOnLane.transform.position) <= currentAnimalOnLane.deltaDistance)
                     {
                         /*currentAnimalOnLane.Attack();*/
                         /*currentAnimalOnLane.currentState = AnimalState.Attack;*/
-                        if (currentAnimalOnLane.currentState != AnimalState.Attack)
+                        if (currentAnimalOnLane.currentState ==AnimalState.MoveToEnemy)
                         {
+                            Debug.Log("sss");
                             currentAnimalOnLane.SetState(AnimalState.Attack);
                         }
-                        if (currentAnimalOnLane.isInitMoveToPlayer && currentAnimalOnLane.isAttacked)
+                        if (/*currentAnimalOnLane.isInitMoveToPlayer && */currentAnimalOnLane.isAttacked)
                         {
+                            Debug.Log("att");
                             firstEnemyInQueue.OnDeActive();
                             Destroy(firstEnemyInQueue.transform.gameObject);
                             EnemyOnLaneQueue.Dequeue();
@@ -103,7 +105,7 @@ public class Lane : MonoBehaviour
                             firstEnemyInQueue.OnDeActive();
                             Destroy(firstEnemyInQueue.transform.gameObject);
                             EnemyOnLaneQueue.Dequeue();
-                            Destroy(currentAnimalOnLane.gameObject);
+                            Destroy(currentAnimalOnLane.gameObject, 0.4f);
                             currentAnimalOnLane = null;
                             animalOnLane = null;
                         }
@@ -118,13 +120,16 @@ public class Lane : MonoBehaviour
                                           currentAnimalOnLane.transform.position) <= currentAnimalOnLane.deltaDistance)
                     {
                         /*currentAnimalOnLane.Attack();*/
-                        currentAnimalOnLane.currentState = AnimalState.Attack;
+                        if (currentAnimalOnLane.currentState != AnimalState.Attack)
+                        {
+                            currentAnimalOnLane.SetState(AnimalState.Attack);
+                        }
                         
                         if (currentAnimalOnLane.isAttacked)
                         {
                             /*Destroy(firstEnemyInQueue.transform.gameObject);
                             EnemyOnLaneQueue.Dequeue();*/
-                            Destroy(currentAnimalOnLane.gameObject);
+                            Destroy(currentAnimalOnLane.gameObject, 0.4f);
                             currentAnimalOnLane = null;
                             animalOnLane = null;
                         }

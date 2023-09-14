@@ -17,22 +17,22 @@ MonoBehaviour:
     - LaneNum: 0
       enemyLevel: 2
       LaneType: 1
-    - LaneNum: 0
+    - LaneNum: 1
       enemyLevel: 2
       LaneType: 2
-    - LaneNum: 0
+    - LaneNum: 3
       enemyLevel: 2
       LaneType: 1
     randomWayList:
+    - LaneNum: 3
+      enemyLevel: 2
+      LaneType: 1
     - LaneNum: 0
+      enemyLevel: 2
+      LaneType: 1
+    - LaneNum: 1
       enemyLevel: 2
       LaneType: 2
-    - LaneNum: 0
-      enemyLevel: 2
-      LaneType: 1
-    - LaneNum: 0
-      enemyLevel: 2
-      LaneType: 1
     TotalEnemy: 3
   - wayList:
     - LaneNum: 0

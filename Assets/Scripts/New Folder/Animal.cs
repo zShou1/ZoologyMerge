@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Animal : MonoBehaviour
@@ -43,6 +44,8 @@ public class Animal : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         zLocalScale = transform.localScale.z;
         currentState = AnimalState.Freeze;
+        transform.localScale= new Vector3(0.08f, 0.08f, 0.08f);
+        transform.DOScale(new Vector3(0.2f, 0.2f, 0.2f), 0.2f);
     }
 
     private void OnEnable()
@@ -109,7 +112,7 @@ public class Animal : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         /*Debug.Log(isAttacked);
         Debug.Log(currentState);*/
@@ -136,7 +139,7 @@ public class Animal : MonoBehaviour
                 }
 
                 break;
-            case AnimalState.MoveToPlayer:
+            case AnimalState.MoveToEnemy:
                 /*StartCoroutine(MoveToEnemy(currentEnemyAttackTransform));*/
                 MoveToEnemy(currentEnemyAttackTransform);
                 break;
