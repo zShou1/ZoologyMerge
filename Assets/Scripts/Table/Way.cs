@@ -9,8 +9,9 @@ public class Way
 {
     public LaneNum LaneNum;
     /*public GameObject EnemyObject;*/
+    [HideInInspector]
     public int enemyLevel;
     /*public int EnemyNum;*/
-    public LaneType LaneType;
+    /*public LaneType LaneType;*/
 
 }

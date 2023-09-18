@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad973494a482a4542912f1eed1863773, type: 3}
+  m_Name: 5
+  m_EditorClassIdentifier: 
+  laneTypeList: 0200000001000000020000000100000002000000
+  waveList:
+  - waveNum: 3
+    wayList:
+    - LaneNum: 1
+      enemyLevel: 3
+    - LaneNum: 2
+      enemyLevel: 3
+    - LaneNum: 3
+      enemyLevel: 3
+    - LaneNum: 4
+      enemyLevel: 3
+    randomWayList: []
+    TotalEnemy: 0
+  - waveNum: 4
+    wayList:
+    - LaneNum: 0
+      enemyLevel: 0
+    - LaneNum: 1
+      enemyLevel: 0
+    - LaneNum: 2
+      enemyLevel: 0
+    - LaneNum: 4
+      enemyLevel: 0
+    randomWayList: []
+    TotalEnemy: 0
+  - waveNum: 5
+    wayList:
+    - LaneNum: 1
+      enemyLevel: 3
+    - LaneNum: 3
+      enemyLevel: 3
+    - LaneNum: 4
+      enemyLevel: 3
+    randomWayList: []
+    TotalEnemy: 0

@@ -12,25 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad973494a482a4542912f1eed1863773, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
+  laneTypeList: 0100000001000000020000000100000002000000
   waveList:
-  - wayList:
+  - waveNum: 1
+    wayList:
     - LaneNum: 0
       enemyLevel: 1
-      LaneType: 1
     - LaneNum: 2
       enemyLevel: 1
-      LaneType: 1
     - LaneNum: 2
       enemyLevel: 1
-      LaneType: 1
     randomWayList:
     - LaneNum: 0
       enemyLevel: 1
-      LaneType: 1
     - LaneNum: 2
       enemyLevel: 1
-      LaneType: 1
     - LaneNum: 2
       enemyLevel: 1
-      LaneType: 1
     TotalEnemy: 3

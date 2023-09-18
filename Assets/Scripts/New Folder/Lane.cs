@@ -24,6 +24,8 @@ public class Lane : MonoBehaviour
 
     private GameObject laneLight;
 
+    [HideInInspector] public LaneType LaneType;
+
     private void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();

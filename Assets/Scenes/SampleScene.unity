@@ -1165,6 +1165,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 20ac7782156f0c641a25e4a6c761469b, type: 2}
   - {fileID: 11400000, guid: 642846506af267547a81d3b8c2a30c76, type: 2}
   - {fileID: 11400000, guid: 1441ac32193658a41b704d8644542b17, type: 2}
+  - {fileID: 11400000, guid: 3395aca4052aedf419287f45b3cea108, type: 2}
+  - {fileID: 11400000, guid: 75cde3c355c69384a9f38f8a677303ac, type: 2}
   levelTable: {fileID: 11400000, guid: 6380ad92ba033b049a1bebde7d26f106, type: 2}
   laneList:
   - {fileID: 1693384436225460124}

@@ -10,31 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad973494a482a4542912f1eed1863773, type: 3}
-  m_Name: 2
+  m_Name: 4
   m_EditorClassIdentifier: 
-  laneTypeList: 0100000002000000010000000100000001000000
+  laneTypeList: 0000000002000000020000000100000002000000
   waveList:
   - waveNum: 2
     wayList:
-    - LaneNum: 0
-      enemyLevel: 2
     - LaneNum: 1
       enemyLevel: 2
     - LaneNum: 3
       enemyLevel: 2
-    randomWayList:
-    - LaneNum: 3
+    - LaneNum: 4
       enemyLevel: 2
-    - LaneNum: 0
-      enemyLevel: 2
-    - LaneNum: 1
-      enemyLevel: 2
-    TotalEnemy: 3
+    randomWayList: []
+    TotalEnemy: 0
   - waveNum: 3
     wayList:
-    - LaneNum: 0
+    - LaneNum: 2
       enemyLevel: 3
-    randomWayList:
-    - LaneNum: 0
+    - LaneNum: 4
       enemyLevel: 3
-    TotalEnemy: 1
+    randomWayList: []
+    TotalEnemy: 0
+  - waveNum: 4
+    wayList:
+    - LaneNum: 1
+      enemyLevel: 4
+    - LaneNum: 3
+      enemyLevel: 4
+    randomWayList: []
+    TotalEnemy: 0
+  - waveNum: 5
+    wayList:
+    - LaneNum: 0
+      enemyLevel: 5
+    randomWayList: []
+    TotalEnemy: 0

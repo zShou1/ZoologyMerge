@@ -54,13 +54,19 @@ public class LevelManager : Singleton<LevelManager>
 
     public IEnumerator CreateLevel()
     {
+        for (int i = 0; i < laneList.Count; i++)
+        {
+            laneList[i].LaneType = levelTable.LaneTypeList[i];
+        }
         for (int i = 0; i < levelTable.waveList.Count; i++)
         {
             currentEnemyDestroy = 0;
 
             LevelTable.Wave wave = levelTable.waveList[i];
+            
             for (int j = 0; j < wave.randomWayList.Count; j++)
             {
+                wave.randomWayList[j].enemyLevel = wave.waveNum;
                 StartCoroutine(SpawnEnemyWay(wave.randomWayList[j]));
                 yield return new WaitForSeconds(timeDelayEnemy);
             }
@@ -125,7 +131,7 @@ public class LevelManager : Singleton<LevelManager>
             Enemy enemy = insEnemy.GetComponent<Enemy>();
             enemy.InitEnemyLevel(way.enemyLevel);
             enemy.OnEnemyDestroy+= OnEnemyDestroyInWave;
-            switch (way.LaneType)
+            switch (lane.LaneType)
             {
                 case LaneType.Slow:
                     enemy.Init(0.5f, 1.1f);

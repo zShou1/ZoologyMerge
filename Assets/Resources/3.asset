@@ -12,67 +12,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad973494a482a4542912f1eed1863773, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
+  laneTypeList: 0100000001000000020000000100000002000000
   waveList:
-  - wayList:
+  - waveNum: 2
+    wayList:
     - LaneNum: 0
       enemyLevel: 2
-      LaneType: 1
     - LaneNum: 1
       enemyLevel: 2
-      LaneType: 1
     - LaneNum: 2
       enemyLevel: 2
-      LaneType: 2
     - LaneNum: 3
       enemyLevel: 2
-      LaneType: 2
     randomWayList:
     - LaneNum: 0
       enemyLevel: 2
-      LaneType: 1
     - LaneNum: 2
       enemyLevel: 2
-      LaneType: 2
     - LaneNum: 1
       enemyLevel: 2
-      LaneType: 1
     - LaneNum: 3
       enemyLevel: 2
-      LaneType: 2
     TotalEnemy: 4
-  - wayList:
+  - waveNum: 3
+    wayList:
     - LaneNum: 1
       enemyLevel: 3
-      LaneType: 1
     - LaneNum: 3
       enemyLevel: 3
-      LaneType: 1
     - LaneNum: 4
       enemyLevel: 3
-      LaneType: 2
     randomWayList:
     - LaneNum: 1
       enemyLevel: 3
-      LaneType: 1
     - LaneNum: 3
       enemyLevel: 3
-      LaneType: 1
     - LaneNum: 4
       enemyLevel: 3
-      LaneType: 2
     TotalEnemy: 3
-  - wayList:
+  - waveNum: 4
+    wayList:
     - LaneNum: 1
       enemyLevel: 4
-      LaneType: 1
     - LaneNum: 3
       enemyLevel: 4
-      LaneType: 1
     randomWayList:
     - LaneNum: 1
       enemyLevel: 4
-      LaneType: 1
     - LaneNum: 3
       enemyLevel: 4
-      LaneType: 1
     TotalEnemy: 2
