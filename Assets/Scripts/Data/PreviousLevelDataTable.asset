@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da609dcbc5b0ac44b15e5189b16b9b6, type: 3}
+  m_Name: PreviousLevelDataTable
+  m_EditorClassIdentifier: 
+  PreviousLevelDataList:
+  - LaneID: 1
+    SpawnPointID: 2
+    Animal: {fileID: 0}
+    Enemy: {fileID: 0}

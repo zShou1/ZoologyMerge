@@ -26,7 +26,7 @@ public class Drag : MonoBehaviour
     private void OnEnable()
     {
         CreateInfoAnimalOnSpawnPoint();
-        DeactiveDragOnLane();
+        CreateInfoAnimalOnLane();
     }
 
     private void OnMouseDown()
@@ -129,7 +129,7 @@ public class Drag : MonoBehaviour
         OnEnableLaneLight();
     }
 
-    void DeactiveDragOnLane()
+    void CreateInfoAnimalOnLane()
     {
         RaycastHit hitInfo;
         if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out hitInfo, 3f,
@@ -238,8 +238,7 @@ public class Drag : MonoBehaviour
             QueryTriggerInteraction.Collide))
         {
             Lane lane = hitLaneInfo.collider.GetComponent<Lane>();
-            Vector3 animalOnLanePosition = hitLaneInfo.collider.transform.position -
-                                           new Vector3(0, 0, lane.laneHeight / 2) + new Vector3(0, 0, 0.2f);
+            Vector3 animalOnLanePosition = lane.AnimalOnLanePosition();
             if (hitLaneInfo.collider.transform != null && lane.currentAnimalOnLane == null)
             {
                 if (lane.currentAnimalOnLane == null)
@@ -253,6 +252,7 @@ public class Drag : MonoBehaviour
                 transform.position = animalOnLanePosition;
                 isOnLane = true;
                 thisAnimal.animalOnLanePosition = animalOnLanePosition;
+                thisAnimal.SetState(AnimalState.Freeze);
             }
             else if (thisAnimal.animalLevel == lane.currentAnimalOnLane.animalLevel)
             {
@@ -293,8 +293,6 @@ public class Drag : MonoBehaviour
                 beforeSpawnPoint.currentAnimal = null;
                 beforeSpawnPoint.animalSpawnPoint = null;
                 isOnLane = true;
-                
-                
             }
             else
             {

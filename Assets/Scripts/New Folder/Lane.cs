@@ -8,6 +8,8 @@ using UnityEngine;
 [Serializable]
 public class Lane : MonoBehaviour
 {
+    public int laneID;
+    
     private BoxCollider _boxCollider;
 
     public float laneHeight;
@@ -46,6 +48,12 @@ public class Lane : MonoBehaviour
         laneLight.SetActive(false);
     }
 
+    public Vector3 AnimalOnLanePosition()
+    {
+        return transform.position -
+               new Vector3(0, 0, laneHeight / 2) + new Vector3(0, 0, 0.2f);
+    }
+
     IEnumerator CheckStateOnLane()
     {
         if (EnemyOnLaneQueue.Count > 0 && currentAnimalOnLane)
@@ -76,12 +84,10 @@ public class Lane : MonoBehaviour
                         /*currentAnimalOnLane.currentState = AnimalState.Attack;*/
                         if (currentAnimalOnLane.currentState ==AnimalState.MoveToEnemy)
                         {
-                            Debug.Log("sss");
                             currentAnimalOnLane.SetState(AnimalState.Attack);
                         }
                         if (/*currentAnimalOnLane.isInitMoveToPlayer && */currentAnimalOnLane.isAttacked)
                         {
-                            Debug.Log("att");
                             firstEnemyInQueue.OnDeActive();
                             Destroy(firstEnemyInQueue.transform.gameObject);
                             EnemyOnLaneQueue.Dequeue();

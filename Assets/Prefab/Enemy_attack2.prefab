@@ -631,6 +631,7 @@ GameObject:
   - component: {fileID: 4092568546648930611}
   - component: {fileID: 8145736235192072725}
   - component: {fileID: 5347403961221888241}
+  - component: {fileID: 3734831161695981221}
   m_Layer: 9
   m_Name: Enemy_attack2
   m_TagString: Enemy
@@ -699,6 +700,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyLevel: 0
   isDestroyOrThrough: 0
+--- !u!95 &3734831161695981221
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552108958607204054}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6014b82c9a5cb943ac12e8d4abcfe5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5079787087984782100
 GameObject:
   m_ObjectHideFlags: 0

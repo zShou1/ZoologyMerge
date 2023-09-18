@@ -5,11 +5,11 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] private List<LevelTable> _listLevel;
     [SerializeField] private LevelTable levelTable;
-    [SerializeField] private List<Lane> laneList;
+    public List<Lane> laneList;
     [SerializeField]
     private float timeDelayEnemy= 2f;
     Vector3 spawnEnemyOnLanePoint;

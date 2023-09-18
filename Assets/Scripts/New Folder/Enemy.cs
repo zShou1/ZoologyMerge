@@ -34,12 +34,7 @@ public class Enemy : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         enemyLevelText = GetComponentInChildren<TextMeshPro>();
-        _animator = transform.GetChild(1).GetComponent<Animator>();
-    }
-
-    private void Update()
-    {
-        _animator.SetFloat("Velocity", Math.Abs(rb.velocity.z));
+        _animator = GetComponent<Animator>();
     }
 
     private void StartMove()
@@ -50,6 +45,7 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = -transform.forward * speed* Time.fixedDeltaTime*10f;
+        _animator.SetFloat("Velocity", Math.Abs(rb.velocity.z));
     }
 
     private void Start()

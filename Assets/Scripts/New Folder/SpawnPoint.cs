@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
+    public int spawnPointID;
+    
     public Animal currentAnimal;
     
     public GameObject animalSpawnPoint;

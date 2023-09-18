@@ -86,11 +86,18 @@
             <e p="readme_DOTweenPro.txt" t="Include" />
           </e>
         </e>
+        <e p="SaveData.json" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Camera" t="Include">
             <e p="ScaleCamera.cs" t="Include" />
           </e>
+          <e p="Data" t="Include">
+            <e p="PreviousLevelData.cs" t="Include" />
+            <e p="PreviousLevelDataTable.cs" t="Include" />
+            <e p="SaveData.cs" t="Include" />
+          </e>
           <e p="Manager" t="Include">
+            <e p="DataManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
           </e>
